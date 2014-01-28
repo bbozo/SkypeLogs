@@ -15,5 +15,10 @@ class Message < AbstractSkypeModel
   def to_s
     "#{id} #{timestamp} #{from_dispname}: #{body}"
   end
+
+  scope :trace, lambda {
+    order(:timestamp).all.each{ |m| puts "#{m.timestamp.to_s.blue} #{m.from_dispname.to_s.green}: #{m.body.to_s.yellow}" };
+    true
+  }
   
 end

@@ -49,3 +49,6 @@ gem 'squeel'
 
 # for parsing escaped chars in Message#body_xml
 gem 'nokogiri'
+
+# pretty colors for trace
+gem 'colorize'
